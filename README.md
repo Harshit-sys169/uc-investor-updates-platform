@@ -9,7 +9,7 @@
 
 > **Streamline founder-to-investor communication with an intelligent, all-in-one investor update platform.** Draft, review, send, track, and manage investor updates with AI-powered suggestions, team collaboration tools, and automated scheduling.
 
-## 🚀 Features
+##  Features
 
 ### Core Capabilities
 - **Smart Draft Generation** — Create structured investor updates from highlights, metrics, challenges, and goals
@@ -22,7 +22,7 @@
 - **Automated Scheduling** — Set recurring update schedules (daily, weekly, monthly) with timezone support
 - **Security & Compliance** — Unsubscribe management, authentication via Clerk, domain verification for production
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |-------|------------|
@@ -34,7 +34,7 @@
 | **AI Services** | OpenAI |
 | **Scheduling** | Luxon, Cron jobs |
 
-## 📖 Documentation
+##  Documentation
 
 - [Getting Started](docs/GETTING_STARTED.md) — Setup instructions and first steps
 - [Architecture](docs/ARCHITECTURE.md) — System design and data model
@@ -44,7 +44,7 @@
 - [Roadmap](docs/ROADMAP.md) — Planned features
 - [Contributing](CONTRIBUTING.md) — Guidelines for contributions
 
-## 🏃 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - Node.js 18+, npm/yarn, PostgreSQL 12+
@@ -64,7 +64,7 @@ npm run dev
 
 Open http://localhost:3000
 
-## 📋 Core Workflow
+##  Core Workflow
 
 1. Create company profile and add investors
 2. Draft update with highlights, metrics, challenges, goals
@@ -76,7 +76,7 @@ Open http://localhost:3000
 8. Manage responses in inbox
 9. Schedule recurring updates
 
-## 🔐 Security
+##  Security
 
 - Enterprise authentication via Clerk
 - Role-based access control (RBAC)
@@ -85,7 +85,7 @@ Open http://localhost:3000
 - DKIM/SPF/DMARC via Resend
 - Rate limiting on sensitive endpoints
 
-## 📈 Roadmap
+##  Roadmap
 
 - Advanced investor analytics
 - PDF export
@@ -97,15 +97,15 @@ Open http://localhost:3000
 
 See [ROADMAP.md](docs/ROADMAP.md) for details.
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## 📄 License
+##  License
 
 MIT License — see [LICENSE](LICENSE)
 
-## 💬 Support
+##  Support
 
 - [Issues](https://github.com/Harshit-sys169/uc-investor-updates-platform/issues)
 - [Discussions](https://github.com/Harshit-sys169/uc-investor-updates-platform/discussions)
