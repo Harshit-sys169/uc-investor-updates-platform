@@ -1,0 +1,38 @@
+{
+  "name": "uc-investor-updates-platform",
+  "version": "1.0.0",
+  "description": "An intelligent investor update platform for seamless founder-to-investor communication",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext ts,tsx",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^4.29.0",
+    "@prisma/client": "^5.7.0",
+    "luxon": "^3.4.1",
+    "openai": "^4.26.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "resend": "^3.0.0",
+    "next": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "typescript": "^5.3.3",
+    "prisma": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Harshit-sys169/uc-investor-updates-platform.git"
+  },
+  "keywords": ["investor-updates", "email", "saas", "next.js", "typescript"],
+  "author": "Harshit Saini",
+  "license": "MIT"
+}

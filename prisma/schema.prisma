@@ -1,0 +1,163 @@
+# Prisma Schema Template
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  id            String   @id @default(cuid())
+  name          String
+  slug          String   @unique
+  clerkUserId   String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  investors      Investor[]
+  updates        Update[]
+  schedules      UpdateSchedule[]
+  emailEvents    EmailEvent[]
+  inboundMessages InboundMessage[]
+  memberships    Membership[]
+  invites        CompanyInvite[]
+  auditLogs      AuditLog[]
+}
+
+model Investor {
+  id               String   @id @default(cuid())
+  companyId        String
+  company          Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  name             String
+  email            String
+  type             String   @default("institutional")
+  unsubscribed     Boolean  @default(false)
+  unsubscribeToken String   @unique
+  replyToken       String   @unique
+  repliedAt        DateTime?
+  replyNotes       String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  emailEvents      EmailEvent[]
+  inboundMessages  InboundMessage[]
+
+  @@unique([companyId, email])
+  @@index([companyId])
+}
+
+model Update {
+  id         String   @id @default(cuid())
+  companyId  String
+  company    Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  title      String
+  content    String   @db.Text
+  periodStart DateTime?
+  periodEnd  DateTime?
+  sentAt     DateTime?
+  status     String   @default("draft")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  emailEvents EmailEvent[]
+
+  @@index([companyId, status])
+}
+
+model UpdateSchedule {
+  id          String   @id @default(cuid())
+  companyId   String
+  company     Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  dayOfMonth  Int?
+  dayOfWeek   Int?
+  hour        Int
+  minute      Int
+  timezone    String
+  isActive    Boolean  @default(true)
+  lastRunAt   DateTime?
+  nextRunAt   DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([companyId])
+}
+
+model EmailEvent {
+  id         String   @id @default(cuid())
+  companyId  String
+  company    Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  investorId String?
+  investor   Investor? @relation(fields: [investorId], references: [id], onDelete: SetNull)
+  updateId   String?
+  update     Update?  @relation(fields: [updateId], references: [id], onDelete: SetNull)
+  type       String   @default("sent")
+  meta       String   @db.Json
+  createdAt  DateTime @default(now())
+
+  @@index([companyId, type])
+  @@index([investorId])
+}
+
+model InboundMessage {
+  id            String   @id @default(cuid())
+  companyId     String
+  company       Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  investorId    String?
+  investor      Investor? @relation(fields: [investorId], references: [id], onDelete: SetNull)
+  fromEmail     String
+  subject       String
+  body          String   @db.Text
+  htmlBody      String?  @db.Text
+  receivedAt    DateTime
+  providerMsgId String
+  threadId      String
+  handled       Boolean  @default(false)
+  createdAt     DateTime @default(now())
+
+  @@index([companyId, handled])
+}
+
+model Membership {
+  id        String   @id @default(cuid())
+  userId    String
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  role      String   @default("member")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, companyId])
+  @@index([userId])
+}
+
+model CompanyInvite {
+  id        String   @id @default(cuid())
+  email     String
+  role      String   @default("member")
+  token     String   @unique
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  invitedById String
+  acceptedAt DateTime?
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@unique([companyId, email])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  actorId   String
+  action    String
+  entityType String
+  entityId  String
+  meta      String   @db.Json
+  createdAt DateTime @default(now())
+
+  @@index([companyId, createdAt])
+}
