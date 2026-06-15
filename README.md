@@ -103,31 +103,6 @@ Open `http://localhost:3000`
 - [Deployment](docs/DEPLOYMENT.md)
 - [Observability](docs/OBSERVABILITY.md)
 
-## Milestones
-
-- Foundation and routing
-- Authentication and tenant isolation
-- Investor CRM and import
-- Update composer and email builder
-- Analytics and tracking
-- Jobs and delivery pipeline
-- Production hardening
-- Tests and CI
-- AI layer
-- Integrations
-- Investor intelligence
-- Enterprise controls
-- Observability
-- Showcase layer
-
-## Portfolio message
-
-This repository is strongest when presented as:
-- a SaaS product
-- a systems design exercise
-- a product management artifact
-- a full-stack engineering portfolio piece
-
 ## License
 
 MIT
