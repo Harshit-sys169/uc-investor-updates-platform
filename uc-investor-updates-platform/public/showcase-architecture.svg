@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">UC Investor Updates Platform architecture overview</title>
+  <desc id="desc">Diagram showing app layers, integrations, database, and operations surfaces.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#11182d"/>
+      <stop offset="100%" stop-color="#0b1020"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" rx="28" fill="url(#bg)"/>
+  <text x="60" y="70" fill="#eef2ff" font-size="30" font-family="Inter, Arial, sans-serif" font-weight="700">UC Investor Updates Platform</text>
+  <text x="60" y="105" fill="#aab3d5" font-size="18" font-family="Inter, Arial, sans-serif">Portfolio-ready SaaS architecture</text>
+
+  <g font-family="Inter, Arial, sans-serif" fill="#eef2ff">
+    <rect x="60" y="160" width="240" height="92" rx="18" fill="#16213d" stroke="#2e3a5e"/>
+    <text x="90" y="198" font-size="22" font-weight="700">Next.js App</text>
+    <text x="90" y="228" font-size="16" fill="#aab3d5">UI, routes, shell</text>
+
+    <rect x="340" y="160" width="240" height="92" rx="18" fill="#16213d" stroke="#2e3a5e"/>
+    <text x="370" y="198" font-size="22" font-weight="700">Auth & Tenancy</text>
+    <text x="370" y="228" font-size="16" fill="#aab3d5">Workspace isolation</text>
+
+    <rect x="620" y="160" width="240" height="92" rx="18" fill="#16213d" stroke="#2e3a5e"/>
+    <text x="650" y="198" font-size="22" font-weight="700">CRM + Composer</text>
+    <text x="650" y="228" font-size="16" fill="#aab3d5">Investors and updates</text>
+
+    <rect x="900" y="160" width="240" height="92" rx="18" fill="#16213d" stroke="#2e3a5e"/>
+    <text x="930" y="198" font-size="22" font-weight="700">AI + Analytics</text>
+    <text x="930" y="228" font-size="16" fill="#aab3d5">Drafting and tracking</text>
+  </g>
+
+  <line x1="300" y1="206" x2="340" y2="206" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+  <line x1="580" y1="206" x2="620" y2="206" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+  <line x1="860" y1="206" x2="900" y2="206" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+
+  <g font-family="Inter, Arial, sans-serif" fill="#eef2ff">
+    <rect x="90" y="330" width="260" height="120" rx="18" fill="#16213d" stroke="#2e3a5e"/>
+    <text x="120" y="370" font-size="22" font-weight="700">Database</text>
+    <text x="120" y="402" font-size="16" fill="#aab3d5">Prisma + PostgreSQL</text>
+
+    <rect x="400" y="330" width="260" height="120" rx="18" fill="#16213d" stroke="#2e3a5e"/>
+    <text x="430" y="370" font-size="22" font-weight="700">Jobs & Webhooks</text>
+    <text x="430" y="402" font-size="16" fill="#aab3d5">Queue, cron, inbound</text>
+
+    <rect x="710" y="330" width="380" height="120" rx="18" fill="#16213d" stroke="#2e3a5e"/>
+    <text x="740" y="370" font-size="22" font-weight="700">Operations</text>
+    <text x="740" y="402" font-size="16" fill="#aab3d5">Observability, rate limiting, Docker, CI, health checks</text>
+  </g>
+
+  <line x1="520" y1="252" x2="520" y2="330" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+  <line x1="780" y1="252" x2="560" y2="330" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+  <line x1="1020" y1="252" x2="920" y2="330" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+
+  <rect x="60" y="520" width="1080" height="120" rx="22" fill="#11182d" stroke="#2e3a5e"/>
+  <text x="90" y="565" fill="#eef2ff" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="700">Reviewer takeaway</text>
+  <text x="90" y="602" fill="#aab3d5" font-size="18" font-family="Inter, Arial, sans-serif">
+    The repository demonstrates product thinking, domain modeling, operational maturity, and clear presentation.
+  </text>
+</svg>
