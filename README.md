@@ -18,18 +18,6 @@ A SaaS-style investor relations platform for founders who need to:
 - manage team access
 - observe production health
 
-## Why this repository is interesting
-
-This repo is structured like a real product instead of a toy demo:
-- multi-tenant application shell
-- investor CRM and update composer
-- AI-assisted drafting layer
-- analytics and recommendation surfaces
-- enterprise controls and auditability
-- job pipeline and observability
-- tests, deployment, and documentation
-- showcase page for recruiters and reviewers
-
 ## Core capabilities
 
 - **Investor CRM** — import, dedupe, tag, search, and inspect investor records
